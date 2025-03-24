@@ -9,7 +9,7 @@ import { useState,useEffect } from 'react';
 const TodoListBackground = () => {
   const[task,setTask] = useState("");
   const[todos,setTodos] = useState(()=>{
-    return JSON.parse(localStorage.getItem("todos") || [])
+    return JSON.parse(localStorage.getItem("todos") || "[]")
   });
   const[isDarkMode,setIsDarkMode] = useState(false);
   const [filter,setFilter] = useState("All");
