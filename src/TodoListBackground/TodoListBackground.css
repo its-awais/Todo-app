@@ -1,0 +1,187 @@
+:root{
+    --Bright-Blue: hsl(220, 98%, 61%);
+--Check-Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue: hsl(234, 39%, 85%);
+--Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+}
+
+.zIndex{
+    z-index: -1;
+}
+.backgrund-image{
+    position: relative;
+    height : 34vh;
+    width: 100%;
+    
+}
+.pointer{
+    cursor : pointer;
+}
+section{
+    position: absolute;
+    max-width : 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.todo-image{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.todo-image > img{
+    width : 2rem;
+    height : 2rem;
+}
+section form .todo-input{
+    width : 25rem ;
+    height : 2.5rem;
+    padding : 1.5rem;
+    margin-bottom: 1.4rem;
+    background-color : var(--Very-Light-Grayish-Blue);
+    border : none;
+    color : black;
+}
+.black{
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    color: var(--Very-Dark-Blue);
+}
+.white{
+    background-color: var(--Very-Dark-Blue) !important;
+    color : var(--Very-Light-Gray) !important;
+}
+
+.todo-display{
+    padding-left: 0rem !important;
+    width: 100%;
+}
+.todo-display> li,.filterTodos{/* i define filterTodos so that i give him a same color*/
+    list-style: none;
+    background-color: var(--Very-Light-Grayish-Blue);
+    width : 100%;
+    padding : 1rem 0.6rem;
+    border-bottom: 0.1rem solid var(--Dark-Grayish-Blue);
+}
+ul li img{
+    cursor: pointer;
+    width : 1.4rem;
+    height : 1.4rem;
+}
+.yeahChecked{  /*for decoration */
+    text-decoration: line-through;
+    color : rgba(22, 21, 21,0.4);
+    transition: color 0.5s ease-in-out;
+    
+}
+.checked{
+    text-decoration: line-through;
+    color : var(--Light-Grayish-Blue-hover);
+    opacity: 0.4;
+    transition: color 0.5s ease-in-out;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    width : 1.2rem;
+    border-radius : 50%;
+    height: 1.2rem;
+    border : 2px solid var(--Very-Dark-Grayish-Blue);
+    position: relative;
+    background: linear-gradient(to right, rgb(237, 153, 227)  , rgb(89, 177, 199));
+}
+input[type="checkbox"]:checked::after {
+    content: '✓'; /* Unicode check mark */
+    font-size: 1rem;
+    font-weight: 800;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color : white;
+  }
+  /*Second part of code start from over here*/
+  button{
+    border: none;
+    background-color: none;
+  }
+  
+  .filterTodos{
+    width : 100%;
+    height: 3.4rem;
+    gap : 1rem;
+  }
+  .filterTodos > ul{
+   list-style-type: none;
+   gap : 1rem;
+  }
+  
+  button{
+    background: none;
+  }
+button{
+    color : inherit !important;
+}
+button:disabled{
+    cursor : not-allowed
+}
+@media(max-width : 475px){
+    .todo-image{
+        width : 25rem;
+    }
+    .filterTodos ul li button{
+    font-weight: 600;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+    .todo-display> li,.filterTodos{
+        width : 25rem;
+    }
+    .filterTodos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .filterTodos > ul {
+        display: flex;
+        flex-wrap: wrap; /* Allows items to move to the next line */
+        justify-content: center; /* Centers items */
+        gap: 1rem;
+        width: 100%;
+    }
+    .clear-completed{
+        position: absolute;
+        right : 1rem;
+    }
+    
+}
+@media(max-width : 415px){
+.todo-image{
+     width : 20rem ;
+}
+
+.todo-display> li,.filterTodos{
+    width : 23rem;
+    margin-left : 0.8rem;
+}
+section form .todo-input{
+    width : 23rem;
+    margin-left: 0.5rem;
+}
+}
+@media(max-width : 390px){
+    .todo-image,.todo-display> li,.filterTodos,section form .todo-input{
+        width : 21rem;
+        margin-right: 0.5rem;
+    }
+}
